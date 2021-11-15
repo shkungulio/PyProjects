@@ -6,12 +6,13 @@ the requirements.txt file for the corresponding project to install
 those required modules.
 
 If you want to install those modules you can run the following
-code:
+code: 
     "pip install -r requirements.txt"
 
 ## For Best Result
 Create directory where you will put project files.
-From terminal run code to install virtual environment inside the directory by running the following code:
+From terminal run code to install virtual environment inside the 
+directory by running the following code:
     windows: "python -m venv your-virtual-environment"
     linux: "virtualenv your-virtual-environment"
 NOTE: Replace "your-virtual-environment" with the name you like!
