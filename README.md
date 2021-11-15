@@ -25,3 +25,6 @@ To get out of virtual environment run the code:
 
 To delete virtual environment run the code:
     "rm -rf your-virtual-environment"
+
+To recreate requirements.txt run the following code while in the virtual environment:
+    "pip freeze --local > requirements.txt
