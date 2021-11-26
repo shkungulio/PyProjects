@@ -1,8 +1,7 @@
 #!/bin/env python3
-###########
-# imports #
-###########
 
+
+# imports tkinter module
 from tkinter import *
 
 class TempConverter:
@@ -11,7 +10,7 @@ class TempConverter:
         self.root.title("Temperature Converter")
         self.root.resizable(FALSE, FALSE)
 
-        self.canvas = Canvas(self.root, width=300, height=360)
+        self.canvas = Canvas(self.root, width=300, height=380)
         self.canvas.pack()
         self.frmMain = LabelFrame(self.canvas, text='Temperature Convertion', padx=5, pady=5, border=5)
         self.frmMain.place(relwidth=0.9, relheight=0.9, relx=0.05, rely=0.05)
@@ -22,6 +21,7 @@ class TempConverter:
         self.frmCelsius = LabelFrame(self.frmMain, text='To \N{DEGREE SIGN}Celsius', pady=5, padx=5)
         self.frmKelvin = LabelFrame(self.frmMain, text='To \N{DEGREE SIGN}Kelvin', pady=5, padx=5)
         self.frmMessage = LabelFrame(self.frmMain, text='Message', pady=5, padx=5)
+        self.frmCopyright = Frame(self.root, bg="lightgreen")
 
         """Create widgets for the frmDataEntry frame"""
         self.entInput = Entry(self.frmDataEntry)
@@ -71,12 +71,18 @@ class TempConverter:
         """Pack the widgets for the frmMessage frame."""
         self.lblMessage.pack()
 
+        # Create and pack widgets for frmCopyright frame.
+        self.lblCopyright = Label(self.frmCopyright, bg="lightgreen", 
+                                    text="\N{COPYRIGHT SIGN} 2021 | shkungulio | All rights reserved")
+        self.lblCopyright.pack()
+
         """Pack the frames"""
         self.frmDataEntry.pack(fill=BOTH, expand=NO)
         self.frmCelsius.pack(fill=BOTH, expand=YES)
         self.frmFahrenheit.pack(fill=BOTH, expand=YES)
         self.frmKelvin.pack(fill=BOTH, expand=YES)
         self.frmMessage.pack(fill=BOTH, expand=YES)
+        self.frmCopyright.pack(fill=BOTH)
 
         """Run the application"""
         mainloop()
