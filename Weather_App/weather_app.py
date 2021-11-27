@@ -8,7 +8,6 @@ import requests
 HEIGHT = 400
 WIDTH = 600
 
-
 root = Tk()
 root.title("Weather Application")
 root.resizable(False, False)
@@ -26,7 +25,6 @@ def searchWeather(city):
         str = soup.find('div', attrs={'class': 'BNeawe tAd8D AP7Wnd'}).text
         
         # formatting data
-
         data = str.split('\n')
         time = data[0]
         sky = data[1]
@@ -92,7 +90,7 @@ lblMain.place(relwidth=1, relheight=1)
 """
 create a label to display copyright information
 """
-lblMsg = Label(root, text='\N{COPYRIGHT SIGN} 2021 | shkungulio | All rights reserved', font=50)
+lblMsg = Label(root, text='\N{COPYRIGHT SIGN} 2021 | shkungulio | All rights reserved')
 lblMsg.pack()
 
 """ run the application """
