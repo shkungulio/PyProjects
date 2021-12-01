@@ -34,7 +34,7 @@ class Palindrome:
         self.response = StringVar()
         self.response.set('')
         self.lblResponse = Label(self.frmMiddle, font=('Roboto, 13'), borderwidth=8, 
-                                    relief= SUNKEN, textvariable=self.response)
+                                    relief= RIDGE, textvariable=self.response)
         self.lblResponse.pack(fill=BOTH, expand=YES, padx=5, pady=5)
 
         # Create and pack widgets for frmBottom frame.
