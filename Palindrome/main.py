@@ -13,6 +13,7 @@ class Palindrome:
         self.root.title('Palindrome App') # set title of the app
         self.root.geometry("260x300") # set the dimensions of the app
         self.root.resizable(FALSE, FALSE) # prevent the app from being resized
+        self.root.protocol("WM_DELETE_WINDOW", self.disable_event)
 
         # Create and pack to hold Canvas to hold all frames of the App.
         self.canvas = Canvas(self.root)
@@ -84,6 +85,9 @@ class Palindrome:
         self.entText.delete(0, END)
         self.response.set(" ")
         self.entText.focus()
+
+    def disable_event(self):
+        pass
 
 if __name__ == "__main__":
     Palindrome()
