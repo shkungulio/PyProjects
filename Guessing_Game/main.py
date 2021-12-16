@@ -14,9 +14,9 @@ def guess(x, y):
     while guess != random_number:
         guess = int(input(f'I am thinking of a number between {x} and {y}, Can you guess it?: '))
         if guess < random_number: # Check if the guessed number is lower than the generated guess
-            print('Sorry that number is too low, GUES AGAIN')
+            print('Sorry that number is too low, GUESS AGAIN')
         elif guess > random_number: # Check if the guessed number is higher than the generated guess
-            print('Sorry that number is too hight, GUES AGAIN')
+            print('Sorry that number is too hight, GUESS AGAIN')
     print(f'Congratulation!!! the guess between {x} and {y} is {guess}')
 
 def check():
