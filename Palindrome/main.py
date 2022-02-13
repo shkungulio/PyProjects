@@ -11,7 +11,7 @@ class Palindrome:
     def __init__(self):
         self.root = Tk()
         self.root.title('Palindrome App') # set title of the app
-        self.root.geometry("260x300") # set the dimensions of the app
+        self.root.geometry("350x300") # set the dimensions of the app
         self.root.resizable(FALSE, FALSE) # prevent the app from being resized
         self.root.protocol("WM_DELETE_WINDOW", self.disable_event)
 
@@ -56,7 +56,7 @@ class Palindrome:
         self.frmTop.pack(fill=BOTH, expand=NO)
         self.frmMiddle.pack(fill=BOTH, expand=YES)
         self.frmBottom.pack(fill=BOTH)
-        self.frmCopyright.pack(fill=BOTH)
+        self.frmCopyright.pack(fill=BOTH, side='bottom')
 
         # Run the App.
         mainloop()

@@ -24,6 +24,7 @@ class Weather:
         GEOMETRY = f'{WIDTH}x{HEIGHT}+{xAXIS}+{yAXIS}'
         self.splash.geometry(GEOMETRY)
 
+        #create canvas to hold all main label that will hold background image
         self.canvas = Canvas(self.splash)
         self.canvas.place(relheight=1, relwidth=1)
         
@@ -50,9 +51,8 @@ class Weather:
         GEOMETRY = f'{WIDTH}x{HEIGHT}+{xAXIS}+{yAXIS}'
         self.root.geometry(GEOMETRY)
         self.root.resizable(0,0)
-        #self.root.iconbitmap('resource/weather.ico')
-        
-
+                
+        #create canvas to hold all main label that will hold background image
         self.canvas = Canvas(self.root)
         self.canvas.place(relheight=1, relwidth=1)
         
@@ -61,12 +61,12 @@ class Weather:
         self.lblMain = Label(self.canvas, image=self.bgImage)
         self.lblMain.place(relheight=1, relwidth=1)
 
-        #Create frames
-        self.frmTop = LabelFrame(self.lblMain, width=40, background='#7F9200')
+        #Create frames to hold widgets
+        self.frmTop = LabelFrame(self.lblMain, width=40, background='lightgreen') #top frame for search input
         self.frmTop.pack(pady=(100,50))
-        self.frmBottom = LabelFrame(self.lblMain, width=40, background='#7F9200')
+        self.frmBottom = LabelFrame(self.lblMain, width=40, background='#7F9200') #bottom frame to display weather information
         self.frmBottom.pack()
-        self.frmCopyright = Label(self.lblMain, background='lightgreen')
+        self.frmCopyright = Label(self.lblMain, background='lightgreen') #copyright label to show copyright information
         self.frmCopyright.pack(fill='both', pady=(75,0))
 
         #Create widgets
@@ -78,10 +78,10 @@ class Weather:
         self.txtInfo.pack(padx=5, pady=5, fill='both', side='left')
 
         self.lblCopyright = Label(self.frmCopyright, bg="lightgreen", 
-                                    text="\N{COPYRIGHT SIGN} 2022 | shkungulio | All rights reserved")
+                                    text="\N{COPYRIGHT SIGN} 2022 | shkungulio | All rights reserved") #copyright information
         self.lblCopyright.pack()
 
-        self.defaults()
+        self.defaults() #call default state of the app
         
 
     def search(self):

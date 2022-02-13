@@ -10,7 +10,7 @@ class TempConverter:
         self.root.title("Temperature Converter")
         self.root.resizable(FALSE, FALSE)
 
-        self.canvas = Canvas(self.root, width=300, height=380)
+        self.canvas = Canvas(self.root, width=350, height=380)
         self.canvas.pack()
         self.frmMain = LabelFrame(self.canvas, text='Temperature Convertion', padx=5, pady=5, border=5)
         self.frmMain.place(relwidth=0.9, relheight=0.9, relx=0.05, rely=0.05)
