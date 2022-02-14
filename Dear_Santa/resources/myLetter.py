@@ -9,7 +9,6 @@ class PDF(FPDF):
 #==========================================================
         pdf = PDF('P', 'mm', 'Letter')
         pdf.set_auto_page_break(auto=True, margin=25)
-        #pdf.compress = False
         pdf.add_page()
         pdf.set_font('Courier', 'B', 20)
 

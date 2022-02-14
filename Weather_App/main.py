@@ -1,7 +1,7 @@
 # import modules
 from textwrap import fill
 from tkinter import *
-import resource
+import resources
 
 # set global variables
 global WIDTH
@@ -28,7 +28,7 @@ class Weather:
         self.canvas = Canvas(self.splash)
         self.canvas.place(relheight=1, relwidth=1)
         
-        bgImage = PhotoImage(file="resource/climate.png")
+        bgImage = PhotoImage(file="resources/climate.png")
 
         self.lblMain = Label(self.canvas, image=bgImage)
         self.lblMain.place(relheight=1, relwidth=1)
@@ -56,7 +56,7 @@ class Weather:
         self.canvas = Canvas(self.root)
         self.canvas.place(relheight=1, relwidth=1)
         
-        self.bgImage = PhotoImage(file="resource/lightning.png")
+        self.bgImage = PhotoImage(file="resources/lightning.png")
 
         self.lblMain = Label(self.canvas, image=self.bgImage)
         self.lblMain.place(relheight=1, relwidth=1)
@@ -90,7 +90,7 @@ class Weather:
                 
         # display the weather informations
         self.txtInfo.delete(1.0, END) # clear the text box
-        self.txtInfo.insert(END, resource.searchWeather(self.city)) # enter information to display
+        self.txtInfo.insert(END, resources.searchWeather(self.city)) # enter information to display
         self.defaults() #call default fuction to disable text box.
 
     def defaults(self):

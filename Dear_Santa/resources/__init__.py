@@ -1,2 +1,2 @@
-import resources.myLetter
-import resources.myMessage
+from .myLetter import PDF
+from .myMessage import Message
