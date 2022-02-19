@@ -1,4 +1,5 @@
 from tkinter import *
+from fpdf import FPDF
 import resources
 
 # global variables
@@ -87,14 +88,14 @@ class DearSanta:
         self.txtEditor.pack(fill='both', expand='yes', side='left', padx=5, pady=5)
 
         #Pack the Frames
-        self.TopFrame.pack(fill='x', padx=5)
-        self.LeftFrame.pack(fill='x', expand=0, side='left', padx=5)
-        self.RightFrame.pack(fill='x', expand=1, side='left', padx=5)
-        self.BottomFrame.pack(fill='both', expand=0, padx=5, pady=5)
+        self.TopFrame.pack(fill='both', padx=5)
+        self.LeftFrame.pack(fill='both', expand=1, side='left', padx=5)
+        self.RightFrame.pack(fill='both', expand=1, side='left', padx=5)
+        self.BottomFrame.pack(fill='both', expand=1, padx=5, pady=5)
 
         #Buttons
         self.btnSubmit = Button(self.LeftFrame, text='SUBMIT', command=self.submit)
-        self.btnPopulate = Button(self.LeftFrame, text='POPULATE', command=lambda:self.populate())
+        self.btnPopulate = Button(self.LeftFrame, text='POPULATE', command=self.populate)
         self.btnClear = Button(self.LeftFrame, text='CLEAR', command=self.clear)
         self.btnExit = Button(self.LeftFrame, text='EXIT', command=self.root.destroy)
 
@@ -108,6 +109,7 @@ class DearSanta:
         self.lblCopyright = Label(self.BottomFrame, background="lightgreen", text="\N{COPYRIGHT SIGN} 2021 | shkungulio | All rights reserved")
         self.lblCopyright.pack()
 
+        # initialize the form's default state
         self.defaults()
 
     def submit(self):
@@ -120,7 +122,7 @@ class DearSanta:
         drink = self.entDrink.get().lower()
         snack = self.entSnack.get().lower()
 
-        msg = Message(attitude, gift2, gift3, gift1, drink, snack, name)
+        msg = resources.Message(attitude, gift2, gift3, gift1, drink, snack, name)
 
         self.txtEditor.config(state='normal')
         self.txtEditor.delete(1.0, 'end')
@@ -140,29 +142,21 @@ class DearSanta:
 
     def populate(self):
         
-        
-        mypdf = PDF()
-
-        """
-        
-
-        pdf = PDF('P', 'mm', 'Letter')
-        pdf.set_auto_page_break(auto=True, margin=25)
-        #pdf.compress = False
+        pdf = resources.PDF('P', 'mm', 'Letter')
+        pdf.set_auto_page_break(auto=True, margin=35)
         pdf.add_page()
-        pdf.set_font('Courier', 'B', 20)
+        pdf.set_font('Courier', 'B', 25)
 
         myLetter = open('myLetter.txt', 'r')
 
         for line in myLetter:
             pdf.multi_cell(200, 10, txt=line, align='L')
-            #pdf.ln(10)
-
-        #pdf.output('myLetter.pdf', 'F')
+           
         pdf.output('myLetter.pdf', 'F')
-        """
+        
 
     def clear(self):
+        #unlock the form so that contents can be deleted
         self.txtEditor.config(state='normal')
         self.entName.config(state='normal')
         self.entAttitude.config(state='normal')
@@ -172,6 +166,8 @@ class DearSanta:
         self.entDrink.config(state='normal')
         self.entSnack.config(state='normal')
         self.txtEditor.config(state='normal')
+
+        # delete everything from the form
         self.entName.delete(0,'end')
         self.entAttitude.delete(0,'end')
         self.entGift1.delete(0,'end')
@@ -181,7 +177,10 @@ class DearSanta:
         self.entSnack.delete(0,'end')
         self.txtEditor.delete(1.0,'end')
 
-    def defaults(self):
+        # call the default state of the form
+        self.defaults()
+
+    def defaults(self): # once called this will set as default state for the form
         self.entName.focus()
         self.txtEditor.config(state='disabled')
 
