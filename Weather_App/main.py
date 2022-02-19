@@ -64,7 +64,7 @@ class Weather:
         #Create frames to hold widgets
         self.frmTop = LabelFrame(self.lblMain, width=40, background='lightgreen') #top frame for search input
         self.frmTop.pack(pady=(100,50))
-        self.frmBottom = LabelFrame(self.lblMain, width=40, background='#7F9200') #bottom frame to display weather information
+        self.frmBottom = LabelFrame(self.lblMain, width=40, background='lightgreen') #bottom frame to display weather information
         self.frmBottom.pack()
         self.frmCopyright = Label(self.lblMain, background='lightgreen') #copyright label to show copyright information
         self.frmCopyright.pack(fill='both', pady=(75,0))
