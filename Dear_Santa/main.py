@@ -1,3 +1,5 @@
+#!/bin/python3
+
 from tkinter import *
 from fpdf import FPDF
 import resources

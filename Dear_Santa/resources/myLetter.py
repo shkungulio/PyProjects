@@ -8,6 +8,7 @@ class PDF(FPDF):
         self.cell(0, 20, 'Dear Santa', ln=1, align='C')
         self.ln(20)
 
+"""
     pdf = PDF('P', 'mm', 'Letter')
     pdf.set_auto_page_break(auto=True, margin=35)
     pdf.add_page()
@@ -19,3 +20,4 @@ class PDF(FPDF):
         pdf.multi_cell(200, 10, txt=line, align='L')
            
     pdf.output('myLetter.pdf', 'F')
+"""
